@@ -1,0 +1,1303 @@
+{
+  "topics": [
+    {
+      "id": "rlm",
+      "subject": "Raciocínio Lógico (RLM)",
+      "label": "RLM #01: Condicional e Conectivos",
+      "title": "RLM #01: Condicional (Se... então)",
+      "cards": [
+        {
+          "title": "1. O que é a Condicional (p → q)?",
+          "body": "Na proposição <b>'Se chove (p), então a rua molha (q)'</b>, temos uma promessa. Ela <b>SÓ É FALSA</b> em um único caso: quando a primeira parte é Verdadeira e a segunda é Falsa (o famoso <b>Vera Fischer = V → F dá F</b>). Em qualquer outro caso, a condicional é Verdadeira."
+        },
+        {
+          "title": "2. Como NEGAR uma Condicional (Regra do MANÉ)",
+          "body": "Para negar <b>'Se p, então q'</b>, você NUNCA usa o 'Se'. Você aplica o <b>MANÉ</b>:<br>• <b>MA</b>ntém a primeira parte<br>• Troca o conectivo por <b>E</b><br>• <b>NE</b>ga a segunda parte.<br><br>Fórmula: <b>~(p → q) ≡ p ∧ ~q</b>"
+        },
+        {
+          "title": "3. Equivalência Clássica (Contrapositiva)",
+          "body": "Se a banca pedir uma frase <b>equivalente</b> a 'Se estudo, então passo', basta inverter e negar tudo (<b>Inverte + Nega + Mantém o Se...então</b>):<br><br><b>'Se NÃO passo, então NÃO estudo' (~q → ~p)</b>."
+        }
+      ],
+      "unlockQuiz": {
+        "q": "Para que a frase 'Se trabalho 8h, então passo no concurso' seja FALSA, o que precisa acontecer?",
+        "options": [
+          {
+            "text": "Eu não trabalhar 8h e não passar no concurso.",
+            "ok": false
+          },
+          {
+            "text": "Eu trabalhar 8h (V) e NÃO passar no concurso (F) — Vera Fischer.",
+            "ok": true
+          },
+          {
+            "text": "Eu não trabalhar 8h (F) e mesmo assim passar (V).",
+            "ok": false
+          }
+        ]
+      },
+      "xray": {
+        "raw": "Considere a afirmação: 'Se Carlos é analista, então Marina é auditora'. A negação lógica correta dessa afirmação é:<br><br>A) Se Carlos não é analista, então Marina não é auditora.<br>B) Carlos não é analista e Marina não é auditora.<br>C) Carlos é analista e Marina não é auditora.",
+        "highlighted": "Considere a afirmação: '<span class='highlight-trigger text-slate-900'>Se</span> Carlos é analista, <span class='highlight-trigger text-slate-900'>então</span> Marina é auditora'. A <span class='highlight-trigger text-slate-900'>negação lógica</span> correta dessa afirmação é:<br><br>A) <span class='highlight-trap text-slate-900'>Se Carlos não é...</span> (Armadilha: Negação de 'Se...então' NUNCA tem 'Se'!)<br>B) <span class='highlight-trap text-slate-900'>Carlos não é analista</span> e Marina não é auditora. (Armadilha: Negou a primeira parte!)<br>C) <b>Carlos é analista E Marina não é auditora.</b> (Gabarito: Manteve a 1ª + E + Negou a 2ª).",
+        "steps": [
+          "Identifique o conectivo no enunciado ('Se... então') e o comando ('negação').",
+          "Elimine imediatamente todas as alternativas que começam com 'Se'.",
+          "Aplique o MANÉ: Mantenha 'Carlos é analista', troque por 'E', negue 'Marina é auditora'."
+        ]
+      },
+      "questions": [
+        {
+          "stem": "1. (Padrão CESPE/FGV) Sabendo que a proposição 'Se o processo foi assinado, então o alvará saiu' é FALSA, conclui-se corretamente que:",
+          "options": [
+            "O processo não foi assinado e o alvará não saiu.",
+            "O processo foi assinado e o alvará não saiu.",
+            "O alvará saiu, mas o processo não foi assinado.",
+            "Se o alvará não saiu, o processo não foi assinado."
+          ],
+          "correct": 1,
+          "explanation": "A condicional (Se p, então q) só é FALSA no caso Vera Fischer (V → F). Logo, 'o processo foi assinado' é V e 'o alvará saiu' é F."
+        },
+        {
+          "stem": "2. Qual é a negação lógica da sentença: 'Se estudo RLM, então acerto a questão'?",
+          "options": [
+            "Se não estudo RLM, então não acerto a questão.",
+            "Não estudo RLM ou não acerto a questão.",
+            "Estudo RLM e não acerto a questão.",
+            "Não estudo RLM e acerto a questão."
+          ],
+          "correct": 2,
+          "explanation": "Regra do MANÉ para negar condicional: Mantém a 1ª ('Estudo RLM') + conectivo 'E' + Nega a 2ª ('não acerto a questão')."
+        },
+        {
+          "stem": "3. Uma afirmação logicamente EQUIVALENTE a 'Se chove, então não vou à praia' é:",
+          "options": [
+            "Se vou à praia, então não chove.",
+            "Chove e vou à praia.",
+            "Se não chove, então vou à praia.",
+            "Não chove e não vou à praia."
+          ],
+          "correct": 0,
+          "explanation": "Equivalência Contrapositiva: inverte a ordem e nega as duas partes mantendo o 'Se... então'. Negar 'não vou à praia' vira 'vou à praia'; negar 'chove' vira 'não chove'."
+        }
+      ]
+    },
+    {
+      "id": "rlm-quantificadores",
+      "subject": "Raciocínio Lógico (RLM)",
+      "label": "RLM #02: Negação de Todo, Algum e Nenhum",
+      "title": "RLM #02: Negação de Quantificadores (Todo, Algum, Nenhum)",
+      "cards": [
+        {
+          "title": "1. Os três quantificadores",
+          "body": "<b>Todo A é B</b> (universal afirmativo), <b>Nenhum A é B</b> (universal negativo) e <b>Algum A é B</b> (particular: 'pelo menos um'). Para derrubar uma afirmação universal basta <b>UM único contraexemplo</b>."
+        },
+        {
+          "title": "2. Tabela de negações",
+          "body": "• <b>~(Todo A é B)</b> ≡ <b>Algum A NÃO é B</b><br>• <b>~(Nenhum A é B)</b> ≡ <b>Algum A é B</b><br>• <b>~(Algum A é B)</b> ≡ <b>Nenhum A é B</b><br><br>Regra prática: <b>universal ↔ particular</b> e <b>afirmativo ↔ negativo</b> (troca os dois ao negar, exceto na direção Nenhum → Algum, que mantém o 'é')."
+        },
+        {
+          "title": "3. A armadilha clássica",
+          "body": "A negação de <b>'Todo'</b> NÃO é <b>'Nenhum'</b>! 'Todos foram aprovados' é falso se <i>pelo menos um</i> foi reprovado — não precisa ser ninguém aprovado. As bancas colocam 'Nenhum' como alternativa tentadora."
+        }
+      ],
+      "unlockQuiz": {
+        "q": "Qual é a negação de 'Todo servidor é pontual'?",
+        "options": [
+          {
+            "text": "Nenhum servidor é pontual.",
+            "ok": false
+          },
+          {
+            "text": "Algum servidor não é pontual.",
+            "ok": true
+          },
+          {
+            "text": "Todo servidor é pontual.",
+            "ok": false
+          }
+        ]
+      },
+      "xray": {
+        "raw": "A negação da afirmação 'Todos os candidatos foram aprovados' é:<br><br>A) Nenhum candidato foi aprovado.<br>B) Algum candidato não foi aprovado.<br>C) Todos os candidatos foram reprovados.",
+        "highlighted": "A <span class='highlight-trigger text-slate-900'>negação</span> da afirmação '<span class='highlight-trigger text-slate-900'>Todos</span> os candidatos foram aprovados' é:<br><br>A) <span class='highlight-trap text-slate-900'>Nenhum candidato foi aprovado.</span> (Armadilha: o oposto extremo NÃO é a negação!)<br>B) <b>Algum candidato não foi aprovado.</b> (Gabarito: basta um contraexemplo.)<br>C) <span class='highlight-trap text-slate-900'>Todos os candidatos foram reprovados.</span> (Armadilha: mesmo erro de A, com outras palavras.)",
+        "steps": [
+          "Identifique o quantificador do enunciado ('Todos') e o comando ('negação').",
+          "Descarte as alternativas extremas ('Nenhum', 'Todos... reprovados').",
+          "Aplique: ~Todo ≡ Algum não. Marque a alternativa com 'Algum... não'."
+        ]
+      },
+      "questions": [
+        {
+          "stem": "1. A negação de 'Nenhum aluno da turma gabaritou a prova' é:",
+          "options": [
+            "Todos os alunos da turma gabaritaram a prova.",
+            "Algum aluno da turma gabaritou a prova.",
+            "Algum aluno da turma não gabaritou a prova.",
+            "Todos os alunos da turma não gabaritaram a prova."
+          ],
+          "correct": 1,
+          "explanation": "~(Nenhum A é B) ≡ Algum A é B. Basta existir um aluno que gabaritou para a afirmação original ser falsa."
+        },
+        {
+          "stem": "2. Considere falsa a afirmação 'Todo processo desta vara é digital'. Conclui-se que:",
+          "options": [
+            "Nenhum processo desta vara é digital.",
+            "Algum processo desta vara não é digital.",
+            "Todo processo desta vara é físico.",
+            "Algum processo desta vara é digital."
+          ],
+          "correct": 1,
+          "explanation": "Se 'Todo A é B' é falsa, sua negação é verdadeira: 'Algum A não é B'. Nada se pode afirmar sobre 'Nenhum'."
+        },
+        {
+          "stem": "3. A negação de 'Algum policial não sabe nadar' é:",
+          "options": [
+            "Nenhum policial sabe nadar.",
+            "Todo policial sabe nadar.",
+            "Algum policial sabe nadar.",
+            "Todo policial não sabe nadar."
+          ],
+          "correct": 1,
+          "explanation": "~(Algum A não é B) ≡ Todo A é B. Se não existe policial que não saiba nadar, então todos sabem."
+        }
+      ]
+    },
+    {
+      "id": "rlm-demorgan",
+      "subject": "Raciocínio Lógico (RLM)",
+      "label": "RLM #03: Conjunção, Disjunção e De Morgan",
+      "title": "RLM #03: Conjunção (E), Disjunção (OU) e Leis de De Morgan",
+      "cards": [
+        {
+          "title": "1. Quando 'E' e 'OU' são verdadeiros?",
+          "body": "• <b>p ∧ q ('E')</b>: só é Verdadeira quando <b>AMBAS</b> são V.<br>• <b>p ∨ q ('OU')</b>: só é <b>FALSA</b> quando <b>AMBAS</b> são F. Basta uma verdadeira para valer."
+        },
+        {
+          "title": "2. Leis de De Morgan (negação)",
+          "body": "Para negar, <b>nega cada parte e troca o conectivo</b>:<br>• <b>~(p ∧ q) ≡ ~p ∨ ~q</b><br>• <b>~(p ∨ q) ≡ ~p ∧ ~q</b><br><br>Ex.: negar 'Estudo <b>e</b> treino' = 'Não estudo <b>ou</b> não treino'."
+        },
+        {
+          "title": "3. Ponte entre OU e Se...então",
+          "body": "A condicional e a disjunção são parentes:<br>• <b>p → q ≡ ~p ∨ q</b><br>• <b>p ∨ q ≡ ~p → q</b><br><br>As bancas adoram pedir 'Se p, então q' escrita na forma de 'OU'. Nega a primeira, mantém a segunda."
+        }
+      ],
+      "unlockQuiz": {
+        "q": "Qual é a negação de 'Maria é médica ou João é engenheiro'?",
+        "options": [
+          {
+            "text": "Maria não é médica ou João não é engenheiro.",
+            "ok": false
+          },
+          {
+            "text": "Maria não é médica e João não é engenheiro.",
+            "ok": true
+          },
+          {
+            "text": "Maria é médica e João é engenheiro.",
+            "ok": false
+          }
+        ]
+      },
+      "xray": {
+        "raw": "A negação lógica de 'O edital foi publicado e as inscrições estão abertas' é:<br><br>A) O edital não foi publicado e as inscrições não estão abertas.<br>B) O edital não foi publicado ou as inscrições não estão abertas.<br>C) Se o edital foi publicado, as inscrições não estão abertas.",
+        "highlighted": "A <span class='highlight-trigger text-slate-900'>negação lógica</span> de 'O edital foi publicado <span class='highlight-trigger text-slate-900'>e</span> as inscrições estão abertas' é:<br><br>A) <span class='highlight-trap text-slate-900'>O edital não foi publicado e as inscrições não estão abertas.</span> (Armadilha: negou as partes mas esqueceu de trocar E por OU!)<br>B) <b>O edital não foi publicado OU as inscrições não estão abertas.</b> (Gabarito: De Morgan.)<br>C) <span class='highlight-trap text-slate-900'>Se o edital foi publicado...</span> (Armadilha: confundiu com a negação da condicional.)",
+        "steps": [
+          "Identifique o conectivo principal: aqui é 'E'.",
+          "Negue cada proposição simples.",
+          "Troque E por OU (De Morgan) e confira se a alternativa fez as duas coisas."
+        ]
+      },
+      "questions": [
+        {
+          "stem": "1. A negação de 'Ana estuda e Bruno trabalha' é:",
+          "options": [
+            "Ana não estuda e Bruno não trabalha.",
+            "Ana não estuda ou Bruno não trabalha.",
+            "Ana estuda ou Bruno trabalha.",
+            "Se Ana estuda, então Bruno não trabalha."
+          ],
+          "correct": 1,
+          "explanation": "De Morgan: ~(p ∧ q) ≡ ~p ∨ ~q. Nega as duas partes e troca E por OU."
+        },
+        {
+          "stem": "2. Se a proposição 'Pedro é juiz ou Lúcia é perita' é FALSA, então:",
+          "options": [
+            "Pedro é juiz e Lúcia não é perita.",
+            "Pedro não é juiz e Lúcia é perita.",
+            "Pedro não é juiz e Lúcia não é perita.",
+            "Nada se pode concluir."
+          ],
+          "correct": 2,
+          "explanation": "A disjunção (OU) só é falsa quando AMBAS as partes são falsas. Logo, Pedro não é juiz E Lúcia não é perita."
+        },
+        {
+          "stem": "3. Uma proposição equivalente a 'Se chove, então o jogo é cancelado' é:",
+          "options": [
+            "Chove e o jogo não é cancelado.",
+            "Não chove ou o jogo é cancelado.",
+            "Chove ou o jogo é cancelado.",
+            "Se não chove, então o jogo não é cancelado."
+          ],
+          "correct": 1,
+          "explanation": "p → q ≡ ~p ∨ q. Nega a 1ª parte ('não chove'), troca o 'se...então' por 'ou' e mantém a 2ª."
+        }
+      ]
+    },
+    {
+      "id": "rlm-porcentagem",
+      "subject": "Raciocínio Lógico (RLM)",
+      "label": "RLM #04: Porcentagem e Variações Sucessivas",
+      "title": "RLM #04: Porcentagem — Aumentos e Descontos Sucessivos",
+      "cards": [
+        {
+          "title": "1. O fator multiplicativo",
+          "body": "Em vez de calcular 'valor + 20%', multiplique direto:<br>• Aumento de 20% → <b>× 1,20</b><br>• Desconto de 20% → <b>× 0,80</b><br>• Aumento de 5% → <b>× 1,05</b><br><br>Regra: <b>fator = 1 ± taxa</b>."
+        },
+        {
+          "title": "2. Variações sucessivas MULTIPLICAM",
+          "body": "Dois aumentos de 10% <b>não</b> somam 20%. Multiplica-se: <b>1,10 × 1,10 = 1,21</b> → aumento total de <b>21%</b>. O mesmo vale para descontos: 2 descontos de 10% = 0,90 × 0,90 = 0,81 → desconto total de <b>19%</b>."
+        },
+        {
+          "title": "3. Subir X% e descer X% NÃO volta ao início",
+          "body": "Aumentar 20% e depois descontar 20%: <b>1,20 × 0,80 = 0,96</b>. O preço final é <b>4% menor</b> que o original, porque o desconto incide sobre uma base maior."
+        }
+      ],
+      "unlockQuiz": {
+        "q": "Um preço sofre aumento de 10% e, em seguida, outro aumento de 10%. O aumento total é de:",
+        "options": [
+          {
+            "text": "20%",
+            "ok": false
+          },
+          {
+            "text": "21%",
+            "ok": true
+          },
+          {
+            "text": "22%",
+            "ok": false
+          }
+        ]
+      },
+      "xray": {
+        "raw": "Um produto de R$ 200,00 teve aumento de 25% e, depois, desconto de 20%. O preço final é:<br><br>A) R$ 190,00<br>B) R$ 200,00<br>C) R$ 210,00",
+        "highlighted": "Um produto de R$ 200,00 teve <span class='highlight-trigger text-slate-900'>aumento de 25%</span> e, <span class='highlight-trigger text-slate-900'>depois</span>, <span class='highlight-trigger text-slate-900'>desconto de 20%</span>. O preço final é:<br><br>A) R$ 190,00<br>B) <b>R$ 200,00</b> (Gabarito: 200 × 1,25 × 0,80 = 200.)<br>C) <span class='highlight-trap text-slate-900'>R$ 210,00</span> (Armadilha: somou 25% − 20% = +5% direto!)",
+        "steps": [
+          "Converta cada variação em fator: +25% = 1,25 e −20% = 0,80.",
+          "Multiplique tudo em sequência: 200 × 1,25 × 0,80.",
+          "Nunca some ou subtraia as taxas percentuais."
+        ]
+      },
+      "questions": [
+        {
+          "stem": "1. Um salário de R$ 2.000,00 recebeu dois reajustes sucessivos de 10%. O salário final é:",
+          "options": [
+            "R$ 2.400,00",
+            "R$ 2.420,00",
+            "R$ 2.440,00",
+            "R$ 2.200,00"
+          ],
+          "correct": 1,
+          "explanation": "2.000 × 1,10 × 1,10 = 2.420. Os reajustes se compõem: o segundo incide sobre o valor já reajustado."
+        },
+        {
+          "stem": "2. O preço de um item caiu 50% e, depois, subiu 50%. Em relação ao preço original, ele ficou:",
+          "options": [
+            "Igual.",
+            "25% menor.",
+            "25% maior.",
+            "50% menor."
+          ],
+          "correct": 1,
+          "explanation": "0,50 × 1,50 = 0,75 → o preço final é 75% do original, ou seja, 25% menor."
+        },
+        {
+          "stem": "3. Dois descontos sucessivos de 10% equivalem a um único desconto de:",
+          "options": [
+            "20%",
+            "19%",
+            "21%",
+            "18%"
+          ],
+          "correct": 1,
+          "explanation": "0,90 × 0,90 = 0,81 → pagar 81% do valor equivale a 19% de desconto."
+        }
+      ]
+    },
+    {
+      "id": "rlm-combinatoria",
+      "subject": "Raciocínio Lógico (RLM)",
+      "label": "RLM #05: Análise Combinatória (Arranjo vs. Combinação)",
+      "title": "RLM #05: Análise Combinatória — A Ordem dos Elementos Importa?",
+      "cards": [
+        {
+          "title": "1. O Teste Supremo: A ordem importa?",
+          "body": "Monte um exemplo de agrupamento com letras ou nomes e <b>inverta a ordem</b>:<br>• Se a inversão gerar um resultado NOVO (mudou o sentido, a senha ou o cargo), <b>A ORDEM IMPORTA</b> → <b>Arranjo / PFC</b> (Ex: Pódio 1º/2º, senhas, Presidente e Vice).<br>• Se a inversão gerar o MESMO grupo, <b>A ORDEM NÃO IMPORTA</b> → <b>Combinação</b> (Ex: Comissões, equipes, duplas de trabalho, sorteios de prêmios iguais)."
+        },
+        {
+          "title": "2. Macete de Cálculo da Combinação (Sem fórmula longa)",
+          "body": "Em vez de usar a fórmula $C = \\frac{n!}{p!(n-p)!}$, use o método dos traços:<br>Para calcular <b>C(10, 3)</b>:<br>• Em cima: decresça o 10 em 3 fatores: <b>10 × 9 × 8</b> (= 720).<br>• Embaixo: fatore o 3 até 1: <b>3 × 2 × 1</b> (= 6).<br>• Divida: 720 ÷ 6 = <b>120</b> comissões possíveis."
+        },
+        {
+          "title": "3. Princípio Fundamental da Contagem (PFC)",
+          "body": "Quando uma ação é formada por etapas sucessivas e independentes, basta <b>multiplicar as possibilidades de cada etapa</b>.<br>Atenção à palavra-chave <b>'DISTINTOS'</b> no enunciado: se os elementos não podem se repetir, cada nova escolha tem 1 opção a menos que a anterior."
+        }
+      ],
+      "unlockQuiz": {
+        "q": "Para escolher uma comissão de 3 analistas entre 10 servidores disponíveis no órgão, qual método deve ser aplicado?",
+        "options": [
+          {
+            "text": "Arranjo Simples, pois os 10 servidores têm cargos e hierarquias diferentes.",
+            "ok": false
+          },
+          {
+            "text": "Combinação Simples, pois trocar a ordem dos membros {Ana, Bob, Cid} forma a mesma comissão.",
+            "ok": true
+          },
+          {
+            "text": "Permutação Simples dos 10 servidores.",
+            "ok": false
+          }
+        ]
+      },
+      "xray": {
+        "raw": "Dentre 8 peritos criminais, devem ser escolhidos 3 para formar uma equipe de inspeção técnica. O número total de maneiras distintas de formar essa equipe é:<br><br>A) 336<br>B) 56<br>C) 24",
+        "highlighted": "Dentre 8 peritos, devem ser escolhidos 3 para <span class='highlight-trigger text-slate-900'>formar uma equipe</span>. O número de maneiras <span class='highlight-trigger text-slate-900'>distintas</span> é:<br><br>A) <span class='highlight-trap text-slate-900'>336</span> (Armadilha clássica: calculou 8 × 7 × 6 esquecendo que a ordem na equipe não gera grupo novo!)<br>B) <b>56</b> (Gabarito: Combinação C(8,3) = (8 × 7 × 6) / (3 × 2 × 1) = 336 / 6 = 56).<br>C) <span class='highlight-trap text-slate-900'>24</span> (Armadilha: apenas multiplicou 8 × 3).",
+        "steps": [
+          "Faça o teste do grupo: mudar a ordem dos peritos na equipe muda a equipe? Não! Logo, é COMBINAÇÃO.",
+          "Aplique o macete: 3 vagas → (8 × 7 × 6) no numerador e (3 × 2 × 1) no denominador.",
+          "Simplifique 8 × 7 × 6 = 336; 336 ÷ 6 = 56."
+        ]
+      },
+      "questions": [
+        {
+          "stem": "1. Quantos números de 3 algarismos DISTINTOS podem ser formados utilizando-se exclusivamente os algarismos 1, 2, 3, 4, 5 e 6?",
+          "options": [
+            "120",
+            "216",
+            "20",
+            "720"
+          ],
+          "correct": 0,
+          "explanation": "Pelo Princípio Multiplicativo: 1ª posição = 6 opções; 2ª posição = 5 opções; 3ª posição = 4 opções. 6 × 5 × 4 = 120 números distintos."
+        },
+        {
+          "stem": "2. Um tribunal tem 7 juízes. De quantas formas pode ser composto um colegiado de 4 juízes para julgar um recurso?",
+          "options": [
+            "840",
+            "35",
+            "28",
+            "210"
+          ],
+          "correct": 1,
+          "explanation": "A ordem dos membros do colegiado não altera o órgão julgador (Combinação C(7,4) = C(7,3)): (7 × 6 × 5) / (3 × 2 × 1) = 210 / 6 = 35."
+        },
+        {
+          "stem": "3. Numa corrida com 10 competidores sem empates, de quantas maneiras diferentes podem ser preenchidos os 3 primeiros lugares (ouro, prata e bronze)?",
+          "options": [
+            "120",
+            "720",
+            "30",
+            "5040"
+          ],
+          "correct": 1,
+          "explanation": "Aqui a ordem importa (ser ouro é diferente de ser prata ou bronze): 1º lugar = 10; 2º lugar = 9; 3º lugar = 8. 10 × 9 × 8 = 720."
+        }
+      ]
+    },
+    {
+      "id": "rlm-probabilidade",
+      "subject": "Raciocínio Lógico (RLM)",
+      "label": "RLM #06: Probabilidade (Regra do E / OU)",
+      "title": "RLM #06: Probabilidade Básica e Eventos Independentes",
+      "cards": [
+        {
+          "title": "1. Definição Clássica de Probabilidade",
+          "body": "A fórmula fundamental é:<br><br><b>P = Casos Favoráveis (o que eu quero) ÷ Casos Possíveis (o total do universo)</b><br><br>A probabilidade sempre varia entre <b>0 (evento impossível, 0%)</b> e <b>1 (evento certo, 100%)</b>."
+        },
+        {
+          "title": "2. Regra do 'E' (Multiplicação) vs. Regra do 'OU' (Soma)",
+          "body": "• <b>Regra do 'E' (Interseção):</b> Quero que aconteça o evento A <b>E</b> o evento B → <b>MULTIPLICA</b>: P(A ∩ B) = P(A) × P(B|A). Se for sem reposição, reduza o total!<br>• <b>Regra do 'OU' (União):</b> Quero o evento A <b>OU</b> o evento B → <b>SOMA</b>: P(A ∪ B) = P(A) + P(B) − P(A ∩ B)."
+        },
+        {
+          "title": "3. O Truque de Ouro: 'Pelo menos um' (Evento Complementar)",
+          "body": "Quando a questão perguntar a probabilidade de acertar <b>'pelo menos um'</b>, nunca calcule todos os casos! Calcule o oposto (a probabilidade de <b>NENHUM</b> dar certo) e subtraia de 100%:<br><br><b>P(Pelo menos um) = 1 − P(Nenhum)</b>."
+        }
+      ],
+      "unlockQuiz": {
+        "q": "Em uma urna com 10 fichas (4 azuis e 6 vermelhas), retiramos 2 fichas sucessivamente SEM reposição. Qual o total de fichas possíveis na 2ª retirada?",
+        "options": [
+          {
+            "text": "10 fichas, pois o universo inicial não se altera.",
+            "ok": false
+          },
+          {
+            "text": "9 fichas, pois a primeira retirada não foi devolvida.",
+            "ok": true
+          },
+          {
+            "text": "8 fichas, correspondente às restantes das cores.",
+            "ok": false
+          }
+        ]
+      },
+      "xray": {
+        "raw": "Em uma gaveta há 6 canetas azuis e 4 pretas. Retirando-se sucessivamente e sem reposição 2 canetas, qual a probabilidade de ambas serem azuis?<br><br>A) 36/100<br>B) 1/3<br>C) 3/5",
+        "highlighted": "Em uma gaveta há 6 azuis e 4 pretas. Retirando-se sucessivamente e <span class='highlight-trigger text-slate-900'>sem reposição</span> 2 canetas, qual a probabilidade de <span class='highlight-trigger text-slate-900'>ambas serem azuis</span>?<br><br>A) <span class='highlight-trap text-slate-900'>36/100</span> (Armadilha: calculou COM reposição: 6/10 × 6/10!)<br>B) <b>1/3</b> (Gabarito: 1ª azul = 6/10; 2ª azul = 5/9. Produto: 30/90 = 1/3).<br>C) <span class='highlight-trap text-slate-900'>3/5</span> (Armadilha: calculou a probabilidade de apenas uma ser azul: 6/10).",
+        "steps": [
+          "Identifique se há reposição: 'SEM reposição' significa que tanto o numerador quanto o denominador diminuem.",
+          "1ª retirada azul: 6 favoráveis em 10 totais (6/10).",
+          "2ª retirada azul: restaram 5 azuis em 9 totais (5/9).",
+          "Multiplique (regra do E): (6/10) × (5/9) = 30/90 = 1/3."
+        ]
+      },
+      "questions": [
+        {
+          "stem": "1. No lançamento de dois dados perfeitos de 6 faces, qual é a probabilidade de a soma dos pontos obtidos ser igual a 7?",
+          "options": [
+            "1/6",
+            "7/36",
+            "1/12",
+            "5/36"
+          ],
+          "correct": 0,
+          "explanation": "Total de resultados possíveis = 6 × 6 = 36. Casos com soma 7: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1) = 6 casos. P = 6/36 = 1/6."
+        },
+        {
+          "stem": "2. Um atirador tem 80% de chance de acertar um alvo a cada disparo. Se ele der 2 tiros independentes, qual a probabilidade de errar AMBOS os tiros?",
+          "options": [
+            "20%",
+            "4%",
+            "16%",
+            "64%"
+          ],
+          "correct": 1,
+          "explanation": "Probabilidade de errar 1 tiro = 100% - 80% = 20% (0,2). Como os tiros são independentes: P(Errar E Errar) = 0,2 × 0,2 = 0,04 = 4%."
+        },
+        {
+          "stem": "3. Uma moeda honesta é lançada 3 vezes seguidas. Qual é a probabilidade de sair 'cara' PELO MENOS uma vez?",
+          "options": [
+            "1/8",
+            "3/8",
+            "7/8",
+            "1/2"
+          ],
+          "correct": 2,
+          "explanation": "Macete do complementar: P(pelo menos 1 cara) = 1 - P(nenhuma cara). P(nenhuma cara = só coroa) = 1/2 × 1/2 × 1/2 = 1/8. Logo, 1 - 1/8 = 7/8."
+        }
+      ]
+    },
+    {
+      "id": "rlm-conjuntos",
+      "subject": "Raciocínio Lógico (RLM)",
+      "label": "RLM #07: Diagramas de Venn e Conjuntos",
+      "title": "RLM #07: Operações com Conjuntos e Diagramas de Venn",
+      "cards": [
+        {
+          "title": "1. A Regra de Ouro: Comece SEMPRE pelo 'Miolo'",
+          "body": "Em qualquer problema de conjuntos com 2 ou 3 grupos, <b>NUNCA</b> preencha as regiões externas primeiro. Encontre a <b>interseção central (quem pertence a todos os grupos simultaneamente)</b> e vá subtraindo os valores para preencher as regiões exclusivas."
+        },
+        {
+          "title": "2. 'Gostam de A' vs. 'Gostam APENAS de A'",
+          "body": "Essa é a armadilha mais comum de bancas:<br>• <b>'30 leem o jornal A':</b> inclui aqueles que leem A e também leem B.<br>• <b>'Apenas / Somente A':</b> é a região exclusiva, calculada como <i>Total(A) − Interseção(A ∩ B)</i>."
+        },
+        {
+          "title": "3. Fórmula da União de 2 Conjuntos",
+          "body": "A fórmula matemática clássica é:<br><br><b>n(A ∪ B) = n(A) + n(B) − n(A ∩ B)</b><br><br>Subtraímos a interseção uma vez porque, se apenas somarmos n(A) + n(B), os indivíduos da interseção teriam sido contados em duplicidade."
+        }
+      ],
+      "unlockQuiz": {
+        "q": "Em uma pesquisa com 50 pessoas: 30 gostam de café, 25 gostam de chá e 10 gostam de ambos. Quantas pessoas gostam SOMENTE de café?",
+        "options": [
+          {
+            "text": "30 pessoas.",
+            "ok": false
+          },
+          {
+            "text": "20 pessoas (30 menos a interseção de 10).",
+            "ok": true
+          },
+          {
+            "text": "15 pessoas.",
+            "ok": false
+          }
+        ]
+      },
+      "xray": {
+        "raw": "Em uma repartição com 100 servidores, 60 utilizam o Sistema Alpha, 50 utilizam o Sistema Beta e 20 utilizam ambos. Quantos servidores não utilizam NENHUM dos dois sistemas?<br><br>A) 10<br>B) 30<br>C) 20",
+        "highlighted": "Em uma repartição com 100 servidores, 60 usam Alpha, 50 usam Beta e <span class='highlight-trigger text-slate-900'>20 usam ambos</span>. Quantos <span class='highlight-trigger text-slate-900'>não utilizam nenhum</span>?<br><br>A) <b>10</b> (Gabarito: Apenas Alpha = 40; Apenas Beta = 30; Ambos = 20. Total que usa algo = 40 + 30 + 20 = 90. Nenhum = 100 - 90 = 10).<br>B) <span class='highlight-trap text-slate-900'>30</span> (Armadilha: somou 60+50=110 e subtraiu sem distribuir no diagrama).<br>C) <span class='highlight-trap text-slate-900'>20</span> (Confundiu com o valor da interseção).",
+        "steps": [
+          "Inicie pela interseção: coloque 20 no centro.",
+          "Calcule os exclusivos: Apenas Alpha = 60 - 20 = 40; Apenas Beta = 50 - 20 = 30.",
+          "Some todos que usam algum sistema: 40 + 20 + 30 = 90.",
+          "Subtraia do total: 100 - 90 = 10 não usam nenhum."
+        ]
+      },
+      "questions": [
+        {
+          "stem": "1. De 80 alunos de uma escola militar, 50 praticam natação, 40 praticam judô e 10 não praticam nenhum dos dois esportes. Quantos alunos praticam AMBOS os esportes?",
+          "options": [
+            "20",
+            "10",
+            "30",
+            "15"
+          ],
+          "correct": 0,
+          "explanation": "Alunos que praticam algum esporte = 80 - 10 = 70. Pela fórmula: n(N ∪ J) = n(N) + n(J) - Interseção ⇒ 70 = 50 + 40 - Interseção ⇒ Interseção = 90 - 70 = 20."
+        },
+        {
+          "stem": "2. Se o conjunto A possui 8 elementos, o conjunto B possui 12 elementos e a interseção A ∩ B possui 5 elementos, o número de elementos de A ∪ B é:",
+          "options": [
+            "20",
+            "15",
+            "17",
+            "25"
+          ],
+          "correct": 1,
+          "explanation": "n(A ∪ B) = n(A) + n(B) - n(A ∩ B) = 8 + 12 - 5 = 15."
+        },
+        {
+          "stem": "3. Numa delegacia, 70% dos policiais civis operam fuzil, 60% operam pistola e todos operam pelo menos uma das duas armas. A porcentagem que opera as duas armas é de:",
+          "options": [
+            "30%",
+            "10%",
+            "20%",
+            "40%"
+          ],
+          "correct": 0,
+          "explanation": "Como todos operam pelo menos uma, o total da união é 100%. 100% = 70% + 60% - Interseção ⇒ 100% = 130% - Interseção ⇒ Interseção = 30%."
+        }
+      ]
+    },
+    {
+      "id": "rlm-tautologia",
+      "subject": "Raciocínio Lógico (RLM)",
+      "label": "RLM #08: Tautologia, Contradição e Contingência",
+      "title": "RLM #08: Tautologia, Contradição e Contingência",
+      "cards": [
+        {
+          "title": "1. O Trio Fundamental da Tabela-Verdade",
+          "body": "• <b>Tautologia:</b> proposição composta que é <b>SEMPRE VERDADEIRA</b> em todas as linhas possíveis da tabela-verdade, independentemente dos valores lógicos das proposições simples.<br>• <b>Contradição:</b> proposição composta que é <b>SEMPRE FALSA</b> em todas as linhas.<br>• <b>Contingência:</b> quando o resultado possui pelo menos um 'V' e pelo menos um 'F' (pode ser verdadeira ou falsa)."
+        },
+        {
+          "title": "2. As Tautologias Clássicas de Concurso",
+          "body": "As bancas adoram cobrar fórmulas clássicas:<br>• <b>Princípio do Terceiro Excluído:</b> <i>p ∨ ~p</i> ('Chove ou não chove') → SEMPRE V (Tautologia).<br>• <b>Identidade da Condicional:</b> <i>p → p</i> → SEMPRE V.<br>• <b>Princípio da Não-Contradição:</b> <i>p ∧ ~p</i> ('Chove e não chove') → SEMPRE F (Contradição), mas sua negação <i>~(p ∧ ~p)</i> é Tautologia."
+        },
+        {
+          "title": "3. O Método Rápido para Testar Tautologia em p → q",
+          "body": "Em vez de montar tabelas de 4 ou 8 linhas, teste o <b>único caso que tornaria a frase falsa (Vera Fischer: V → F)</b>.<br>Se for logicamente IMPOSSÍVEL forçar a primeira parte ser Verdadeira e a segunda ser Falsa ao mesmo tempo, a proposição é obrigatoriamente uma <b>TAUTOLOGIA</b>!"
+        }
+      ],
+      "unlockQuiz": {
+        "q": "A sentença 'O réu é culpado ou o réu não é culpado' é um exemplo clássico de:",
+        "options": [
+          {
+            "text": "Contradição, pois uma parte anula a outra.",
+            "ok": false
+          },
+          {
+            "text": "Tautologia (p ∨ ~p), pois é necessariamente verdadeira em qualquer cenário.",
+            "ok": true
+          },
+          {
+            "text": "Contingência dependente do veredito.",
+            "ok": false
+          }
+        ]
+      },
+      "xray": {
+        "raw": "Dadas as proposições, qual delas configura uma TAUTOLOGIA?<br><br>A) p ∧ ~p<br>B) (p ∧ q) → p<br>C) p → ~p",
+        "highlighted": "Dadas as proposições, qual delas configura uma <span class='highlight-trigger text-slate-900'>TAUTOLOGIA</span>?<br><br>A) <span class='highlight-trap text-slate-900'>p ∧ ~p</span> (Armadilha: isso é uma CONTRADIÇÃO clássica: nunca se pode ter V e F ao mesmo tempo no conectivo 'E').<br>B) <b>(p ∧ q) → p</b> (Gabarito: Tente forçar Vera Fischer V → F. Para a 2ª parte ser F, p=F. Mas se p=F, a 1ª parte (F ∧ q) fica F, impedindo o V → F. Impossível dar F!).<br>C) <span class='highlight-trap text-slate-900'>p → ~p</span> (Contingência: se p=V dá V → F = F; se p=F dá F → V = V).",
+        "steps": [
+          "Lembre-se da definição: Tautologia = resultado final é 100% verdadeiro.",
+          "Descarte p ∧ ~p (isso é contradição).",
+          "Teste a condicional na alternativa B: para dar falso precisaria de (p ∧ q)=V e p=F, o que é um absurdo matemático. Logo, é Tautologia."
+        ]
+      },
+      "questions": [
+        {
+          "stem": "1. (CESPE) A proposição lógica composta 'Se Pedro é auditor fiscal, então Pedro é auditor fiscal' é classificada como:",
+          "options": [
+            "Uma contingência",
+            "Uma contradição",
+            "Uma tautologia",
+            "Um silogismo inválido"
+          ],
+          "correct": 2,
+          "explanation": "Estrutura p → p: se p é V, V → V = V; se p é F, F → F = V. Sempre verdadeira em todas as hipóteses, logo é Tautologia."
+        },
+        {
+          "stem": "2. Assinale a proposição que representa uma CONTRADIÇÃO:",
+          "options": [
+            "Carlos foi aprovado ou Carlos foi reprovado.",
+            "Carlos foi aprovado e Carlos não foi aprovado.",
+            "Se Carlos foi aprovado, Carlos estudou.",
+            "Carlos estuda se e somente se trabalha."
+          ],
+          "correct": 1,
+          "explanation": "A proposição p ∧ ~p ('Carlos foi aprovado E Carlos não foi aprovado') é impossível de ser satisfeita no mundo real, resultando em Falso em todas as hipóteses."
+        },
+        {
+          "stem": "3. Uma proposição lógica que pode assumir valor Verdadeiro em algumas situações e Falso em outras, conforme o valor das proposições simples, é denominada:",
+          "options": [
+            "Tautologia",
+            "Equivalência",
+            "Contingência",
+            "Contradição"
+          ],
+          "correct": 2,
+          "explanation": "Contingência é a proposição composta cuja tabela-verdade não é nem puramente verdadeira (tautologia) nem puramente falsa (contradição)."
+        }
+      ]
+    },
+    {
+      "id": "pt",
+      "subject": "Língua Portuguesa",
+      "label": "Português #01: Conjunções Adversativas vs. Concessivas",
+      "title": "Português #01: Conjunções Adversativas vs. Concessivas",
+      "cards": [
+        {
+          "title": "1. O que ambas têm em comum?",
+          "body": "Tanto as <b>Adversativas</b> (mas, porém, contudo, todavia, no entanto) quanto as <b>Concessivas</b> (embora, ainda que, mesmo que, apesar de) expressam <b>OPOSIÇÃO / CONTRASTE</b>. As bancas adoram pedir para trocar uma pela outra."
+        },
+        {
+          "title": "2. A Diferença Cirúrgica (Quem ganha a briga?)",
+          "body": "• <b>Adversativa (Coordenação):</b> O argumento mais forte está na oração do <i>mas/porém</i>. Ex: 'Estudou muito, <b>mas</b> reprovou' (foco no fato de reprovar).<br>• <b>Concessiva (Subordinação):</b> Enfraquece o obstáculo. Ex: '<b>Embora</b> estivesse cansado, estudou 2h' (o cansaço não impediu a ação principal)."
+        },
+        {
+          "title": "3. Mudança de Modo Verbal na Reescrita",
+          "body": "Cuidado ao reescrever! 'Embora' exige verbo no <b>Subjuntivo</b> (Embora <i>chova</i>). Já 'Porém/Mas' usa verbo no <b>Indicativo</b> (Chove, <i>porém</i>...). Trocar o conectivo sem ajustar o verbo gera erro gramatical!"
+        }
+      ],
+      "unlockQuiz": {
+        "q": "Na frase 'Conquanto o edital ainda não tenha saído, já iniciei a preparação', o termo 'Conquanto' expressa:",
+        "options": [
+          {
+            "text": "Causa (já que o edital não saiu).",
+            "ok": false
+          },
+          {
+            "text": "Concessão / Oposição (equivalente a 'Embora').",
+            "ok": true
+          },
+          {
+            "text": "Conclusão (portanto iniciei a preparação).",
+            "ok": false
+          }
+        ]
+      },
+      "xray": {
+        "raw": "Na frase 'Posto que tivesse pouco tempo livre, o candidato bateu a meta da semana', o conectivo destacado pode ser substituído, sem alteração de sentido e mantendo a correção, por:<br><br>A) Porquanto<br>B) Portanto<br>C) Ainda que",
+        "highlighted": "Na frase '<span class='highlight-trigger text-slate-900'>Posto que</span> <span class='highlight-trigger text-slate-900'>tivesse</span> pouco tempo livre, o candidato bateu a meta', o conectivo pode ser substituído por:<br><br>A) <span class='highlight-trap text-slate-900'>Porquanto</span> (Armadilha sonora! 'Porquanto' é CAUSA/EXPLICAÇÃO, igual a 'porque'!)<br>B) <span class='highlight-trap text-slate-900'>Portanto</span> (Conclusivo).<br>C) <b>Ainda que</b> (Gabarito: 'Posto que' e 'Conquanto' são sinônimos clássicos de 'Embora / Ainda que').",
+        "steps": [
+          "Olhe o verbo: 'tivesse' está no subjuntivo, sinal clássico de oração concessiva.",
+          "Cuidado com a dupla 'Porquanto' (Causa = Porque) vs. 'Conquanto / Posto que' (Concessão = Embora).",
+          "Teste mentalmente a troca por 'Embora' ou 'Ainda que'."
+        ]
+      },
+      "questions": [
+        {
+          "stem": "1. Assinale a alternativa em que o conectivo sublinhado estabelece relação de CONCESSÃO:",
+          "options": [
+            "O servidor trabalhou bastante, contudo não concluiu o relatório.",
+            "Conquanto o prazo fosse curto, a equipe entregou o projeto sem erros.",
+            "O sistema caiu porquanto houve um pico de energia.",
+            "Estudou com afinco; portanto, foi aprovado."
+          ],
+          "correct": 1,
+          "explanation": "'Conquanto' é conjunção subordinativa concessiva (= embora). Na letra A ('contudo') é adversativa; na C ('porquanto') é explicativa/causal."
+        },
+        {
+          "stem": "2. Ao substituir 'Embora' por 'Todavia' em 'Embora chova muito, o trânsito flui bem', a reescrita correta é:",
+          "options": [
+            "Todavia chova muito, o trânsito flui bem.",
+            "Chove muito, todavia o trânsito flui bem.",
+            "O trânsito flui bem, todavia chova muito.",
+            "Mesmo que todavia chova, o trânsito flui bem."
+          ],
+          "correct": 1,
+          "explanation": "'Todavia' é coordenativa adversativa: introduz a segunda oração e exige o verbo no modo indicativo ('Chove muito, todavia...')."
+        },
+        {
+          "stem": "3. Na sentença 'Não obstante as dificuldades financeiras, a empresa cresceu', a locução 'Não obstante' tem valor:",
+          "options": [
+            "Proporcional",
+            "Condicional",
+            "Concessivo / Opositivo",
+            "Consecutivo"
+          ],
+          "correct": 2,
+          "explanation": "'Não obstante' equivale a 'apesar de' / 'embora', indicando concessão/oposição."
+        }
+      ]
+    },
+    {
+      "id": "pt-crase",
+      "subject": "Língua Portuguesa",
+      "label": "Português #02: Crase",
+      "title": "Português #02: Crase — Quando usar e quando proibir",
+      "cards": [
+        {
+          "title": "1. O que é a crase?",
+          "body": "Crase é a <b>fusão</b> da preposição <b>'a'</b> com o artigo feminino <b>'a'</b> (ou pronome demonstrativo). Para haver crase é preciso: <b>(1)</b> palavra que <b>exija</b> a preposição 'a' e <b>(2)</b> palavra feminina que <b>aceite</b> o artigo 'a'."
+        },
+        {
+          "title": "2. O teste do masculino",
+          "body": "Troque a palavra feminina por uma masculina. Se aparecer <b>'ao'</b>, há crase no feminino:<br>• Fui <b>à</b> escola → Fui <b>ao</b> colégio ✔<br>• Refiro-me <b>a</b> pessoas → Refiro-me <b>a</b> homens (sem 'ao') ✘"
+        },
+        {
+          "title": "3. Crase PROIBIDA",
+          "body": "Nunca há crase antes de: <b>verbos</b> (começou a estudar), <b>palavras masculinas</b> (a pé, a cavalo), <b>pronomes pessoais</b> (a ela, a você), <b>plural sem artigo</b> (a pessoas) e <b>expressões com palavras repetidas</b> (frente a frente, dia a dia)."
+        }
+      ],
+      "unlockQuiz": {
+        "q": "Qual das frases abaixo está corretamente grafada quanto ao uso da crase?",
+        "options": [
+          {
+            "text": "Fui a escola ontem.",
+            "ok": false
+          },
+          {
+            "text": "Fui à escola ontem.",
+            "ok": true
+          },
+          {
+            "text": "Fiz uma pergunta à ela.",
+            "ok": false
+          }
+        ]
+      },
+      "xray": {
+        "raw": "Assinale a alternativa em que o uso da crase está CORRETO:<br><br>A) Refiro-me à pessoas competentes.<br>B) Entregou o documento à secretária.<br>C) Começou à estudar cedo.",
+        "highlighted": "Assinale a alternativa em que o uso da <span class='highlight-trigger text-slate-900'>crase</span> está CORRETO:<br><br>A) Refiro-me <span class='highlight-trap text-slate-900'>à pessoas</span> competentes. (Armadilha: plural sem artigo!)<br>B) Entregou o documento <b>à secretária</b>. (Gabarito: entregou AO diretor → crase.)<br>C) Começou <span class='highlight-trap text-slate-900'>à estudar</span> cedo. (Armadilha: crase NUNCA antes de verbo!)",
+        "steps": [
+          "Olhe a palavra após o 'à': verbo, masculino ou plural sem artigo? Já descarte.",
+          "Aplique o teste do masculino: apareceu 'ao'? Então há crase.",
+          "Confirme se o verbo/nome anterior realmente exige a preposição 'a'."
+        ]
+      },
+      "questions": [
+        {
+          "stem": "1. Assinale a alternativa em que o emprego do sinal indicativo de crase está CORRETO:",
+          "options": [
+            "Cheguei às 10h da manhã.",
+            "Estou disposto à colaborar.",
+            "Ficamos frente à frente com o diretor.",
+            "Referiu-se à ela com muito carinho."
+          ],
+          "correct": 0,
+          "explanation": "Indicação de horas leva crase (às 10h). Em B há verbo após 'à'; em C a expressão repete a mesma palavra; em D, pronome pessoal não aceita artigo."
+        },
+        {
+          "stem": "2. Complete: 'Enviei o convite ___ diretora da escola.'",
+          "options": [
+            "a",
+            "à",
+            "as",
+            "ao"
+          ],
+          "correct": 1,
+          "explanation": "'Enviei o convite AO diretor' → no feminino, 'à diretora'. Há preposição (enviar a alguém) + artigo (a diretora)."
+        },
+        {
+          "stem": "3. Em qual das frases a crase é OBRIGATÓRIA?",
+          "options": [
+            "Fomos a Curitiba nas férias.",
+            "Voltamos à Bahia no fim do ano.",
+            "Chegamos a Roma de manhã.",
+            "Viajou a Paris sozinho."
+          ],
+          "correct": 1,
+          "explanation": "Truque do 'voltar DA': se 'volto DA cidade', há crase. 'Volto da Bahia' → 'vou à Bahia'. Já 'volto DE Curitiba/Roma/Paris' → sem crase."
+        }
+      ]
+    },
+    {
+      "id": "pt-haver-fazer",
+      "subject": "Língua Portuguesa",
+      "label": "Português #03: Concordância com Haver e Fazer",
+      "title": "Português #03: Verbos Impessoais — Haver e Fazer",
+      "cards": [
+        {
+          "title": "1. Haver = existir ou tempo decorrido",
+          "body": "Quando <b>'haver'</b> significa <b>existir</b> ou indica <b>tempo passado</b>, é <b>impessoal</b>: não tem sujeito e fica <b>sempre no singular (3ª pessoa)</b>.<br>• <b>Há</b> muitos candidatos. (existem)<br>• <b>Havia</b> três vagas.<br>• Isso aconteceu <b>há</b> dois anos."
+        },
+        {
+          "title": "2. Fazer indicando tempo",
+          "body": "<b>'Fazer'</b> indicando tempo decorrido ou fenômeno da natureza também é impessoal e fica no <b>singular</b>:<br>• <b>Faz</b> dois anos que me formei.<br>• <b>Fazia</b> muitos graus negativos."
+        },
+        {
+          "title": "3. Verbos auxiliares 'contaminam'",
+          "body": "Se há um verbo auxiliar antes de 'haver' (deve, pode, vai), ele também <b>fica no singular</b>:<br>• <b>Deve haver</b> erros no texto. ✔<br>• <b>Devem haver</b> erros no texto. ✘<br><br>Atenção: 'Houveram' e 'Haviam' (no sentido de existir) são <b>erros clássicos</b>."
+        }
+      ],
+      "unlockQuiz": {
+        "q": "Assinale a frase CORRETA quanto à concordância:",
+        "options": [
+          {
+            "text": "Haviam muitos candidatos na fila.",
+            "ok": false
+          },
+          {
+            "text": "Havia muitos candidatos na fila.",
+            "ok": true
+          },
+          {
+            "text": "Houveram muitos candidatos na fila.",
+            "ok": false
+          }
+        ]
+      },
+      "xray": {
+        "raw": "Assinale a alternativa correta quanto à concordância verbal:<br><br>A) Haviam três vagas abertas.<br>B) Deve haver três vagas abertas.<br>C) Devem haver três vagas abertas.",
+        "highlighted": "Assinale a alternativa correta quanto à <span class='highlight-trigger text-slate-900'>concordância verbal</span>:<br><br>A) <span class='highlight-trap text-slate-900'>Haviam</span> três vagas abertas. (Armadilha: haver = existir é invariável!)<br>B) <b>Deve haver</b> três vagas abertas. (Gabarito: auxiliar acompanha 'haver' no singular.)<br>C) <span class='highlight-trap text-slate-900'>Devem haver</span> três vagas abertas. (Armadilha: concordou com 'vagas', mas 'vagas' não é sujeito!)",
+        "steps": [
+          "Pergunte: 'haver' aqui significa existir ou tempo passado? Então é impessoal.",
+          "Se existe verbo auxiliar, ele também fica no singular.",
+          "Ignore o plural do substantivo seguinte: ele NÃO é sujeito."
+        ]
+      },
+      "questions": [
+        {
+          "stem": "1. Assinale a alternativa em que a concordância está de acordo com a norma-padrão:",
+          "options": [
+            "Fazem dois anos que me formei.",
+            "Faz dois anos que me formei.",
+            "Fazem-se dois anos que me formei.",
+            "Fazia dois anos, que eu me formei, ontem."
+          ],
+          "correct": 1,
+          "explanation": "'Fazer' indicando tempo decorrido é impessoal: fica sempre no singular."
+        },
+        {
+          "stem": "2. Complete: '___ haver mudanças no edital antes da prova.'",
+          "options": [
+            "Podem",
+            "Pode",
+            "Podiam",
+            "Poderão"
+          ],
+          "correct": 1,
+          "explanation": "O auxiliar 'poder' acompanha o impessoal 'haver' e fica no singular: 'Pode haver mudanças'."
+        },
+        {
+          "stem": "3. Complete: 'Na reunião de ontem ___ muitas divergências.'",
+          "options": [
+            "houveram",
+            "houve",
+            "haviam",
+            "houveram-se"
+          ],
+          "correct": 1,
+          "explanation": "'Haver' no sentido de ocorrer/acontecer é impessoal: 'houve' (singular), mesmo com complemento no plural."
+        }
+      ]
+    },
+    {
+      "id": "pt-virgula",
+      "subject": "Língua Portuguesa",
+      "label": "Português #04: Emprego da Vírgula",
+      "title": "Português #04: Emprego da Vírgula",
+      "cards": [
+        {
+          "title": "1. A regra de ouro: NUNCA separe sujeito de verbo",
+          "body": "Entre <b>sujeito</b> e <b>verbo</b>, e entre <b>verbo</b> e <b>complemento</b>, não se usa vírgula (a não ser que haja um elemento intercalado, que será isolado por duas vírgulas).<br>• <b>O servidor concluiu o relatório.</b> ✔<br>• O servidor, concluiu o relatório. ✘"
+        },
+        {
+          "title": "2. Vírgula OBRIGATÓRIA",
+          "body": "Use vírgula para isolar: <b>aposto</b> (Carlos, o diretor, chegou), <b>vocativo</b> (Meus amigos, venham), <b>adjunto adverbial deslocado</b> (Amanhã, o edital sairá) e <b>enumerações</b>. Antes de <b>mas, porém, contudo, todavia</b> a vírgula é obrigatória."
+        },
+        {
+          "title": "3. Vírgula que muda o sentido",
+          "body": "Orações adjetivas:<br>• <b>Explicativa</b> (com vírgulas): 'Os alunos<b>,</b> que estudaram<b>,</b> foram aprovados' → <b>todos</b> estudaram.<br>• <b>Restritiva</b> (sem vírgulas): 'Os alunos que estudaram foram aprovados' → <b>só os que estudaram</b>."
+        }
+      ],
+      "unlockQuiz": {
+        "q": "Qual frase está corretamente pontuada?",
+        "options": [
+          {
+            "text": "O candidato, estudou muito.",
+            "ok": false
+          },
+          {
+            "text": "O candidato estudou muito, mas não passou.",
+            "ok": true
+          },
+          {
+            "text": "O candidato estudou muito mas, não passou.",
+            "ok": false
+          }
+        ]
+      },
+      "xray": {
+        "raw": "Assinale a frase corretamente pontuada:<br><br>A) O servidor, concluiu o relatório.<br>B) O servidor concluiu, o relatório.<br>C) O servidor, Carlos, concluiu o relatório.",
+        "highlighted": "Assinale a frase <span class='highlight-trigger text-slate-900'>corretamente pontuada</span>:<br><br>A) O servidor<span class='highlight-trap text-slate-900'>,</span> concluiu o relatório. (Armadilha: vírgula entre sujeito e verbo!)<br>B) O servidor concluiu<span class='highlight-trap text-slate-900'>,</span> o relatório. (Armadilha: vírgula entre verbo e complemento!)<br>C) <b>O servidor, Carlos, concluiu o relatório.</b> (Gabarito: aposto isolado por duas vírgulas.)",
+        "steps": [
+          "Localize sujeito, verbo e complemento da frase.",
+          "Elimine toda alternativa com vírgula sozinha entre esses termos.",
+          "Só aceite vírgula se isolar aposto, vocativo, adjunto deslocado ou enumeração."
+        ]
+      },
+      "questions": [
+        {
+          "stem": "1. Assinale a alternativa pontuada de forma CORRETA:",
+          "options": [
+            "Estudei muito mas, não passei.",
+            "Estudei muito, mas não passei.",
+            "Estudei, muito mas não passei.",
+            "Estudei muito mas não, passei."
+          ],
+          "correct": 1,
+          "explanation": "A conjunção adversativa 'mas' deve vir precedida de vírgula, sem separar as palavras que formam seu sentido."
+        },
+        {
+          "stem": "2. Qual das frases abaixo contém ERRO de pontuação?",
+          "options": [
+            "Brasília, capital federal, é muito planejada.",
+            "Meus amigos, venham até aqui.",
+            "O prazo de entrega, termina amanhã.",
+            "Amanhã, o edital será publicado."
+          ],
+          "correct": 2,
+          "explanation": "Na letra C, a vírgula separa o sujeito ('O prazo de entrega') do verbo ('termina'). As demais isolam aposto, vocativo e adjunto adverbial deslocado."
+        },
+        {
+          "stem": "3. Na frase 'Os alunos, que estudaram, foram aprovados', as vírgulas indicam que:",
+          "options": [
+            "Apenas alguns alunos estudaram.",
+            "Todos os alunos estudaram.",
+            "Nenhum aluno estudou.",
+            "Há erro de pontuação."
+          ],
+          "correct": 1,
+          "explanation": "A oração adjetiva explicativa (entre vírgulas) atribui a característica a TODOS os alunos. Sem vírgulas, seria restritiva (só os que estudaram)."
+        }
+      ]
+    },
+    {
+      "id": "pt-regencia",
+      "subject": "Língua Portuguesa",
+      "label": "Português #05: Regência Verbal (Verbos Perigosos)",
+      "title": "Português #05: Regência Verbal — Verbos Campeões de Concurso",
+      "cards": [
+        {
+          "title": "1. Assistir e Aspirar",
+          "body": "• <b>Assistir:</b><br>- Sentido de <i>ver/presenciar</i>: é <b>VTI (exige 'a')</b> → 'Assisti <b>ao</b> documentário' (dizer 'assisti o filme' é erro gramatical).<br>- Sentido de <i>socorrer/ajudar</i>: é <b>VTD</b> → 'O médico assistiu <b>o</b> enfermo'.<br><br>• <b>Aspirar:</b><br>- Sentido de <i>almejar/pretender</i>: é <b>VTI (exige 'a')</b> → 'Aspirava <b>ao</b> cargo de auditor'.<br>- Sentido de <i>cheirar/sugar</i>: é <b>VTD</b> → 'Aspirou <b>o</b> perfume'."
+        },
+        {
+          "title": "2. Visar e Implicar (A armadilha fatal)",
+          "body": "• <b>Visar:</b><br>- Sentido de <i>ter como objetivo</i>: é <b>VTI (exige 'a')</b> → 'O curso visa <b>à</b> aprovação'.<br>- Sentido de <i>mirar/assinar</i>: é <b>VTD</b> → 'Visou <b>o</b> passaporte'.<br><br>• <b>Implicar:</b><br>- Sentido de <i>acarretar/produzir efeito</i>: é <b>VTD (NÃO ACEITA 'EM')</b>!<br>✔ 'Sua atitude implicará <b>demissão</b>.'<br>✘ 'Sua atitude implicará em demissão' (Erro clássico de prova!)."
+        },
+        {
+          "title": "3. Lembrar / Esquecer e Preferir",
+          "body": "• <b>Lembrar/Esquecer:</b><br>- <i>Com pronome</i>: exige preposição <b>DE</b> ('Esqueci-<b>me da</b> data').<br>- <i>Sem pronome</i>: <b>SEM preposição</b> ('Esqueci <b>a</b> data'). Ou usa os dois (me + de), ou nenhum dos dois!<br><br>• <b>Preferir:</b> pede 'a' e <b>rejeita 'do que'</b> ou 'mais que' → 'Prefiro café <b>a</b> chá' (e nunca 'prefiro café do que chá')."
+        }
+      ],
+      "unlockQuiz": {
+        "q": "Assinale a frase redigida em estrita conformidade com a norma-padrão de regência:",
+        "options": [
+          {
+            "text": "O novo plano de metas implicará em cortes de custos.",
+            "ok": false
+          },
+          {
+            "text": "Todos os concursandos aspiram ao cargo público dos sonhos.",
+            "ok": true
+          },
+          {
+            "text": "Ontem assisti um filme excelente no cinema.",
+            "ok": false
+          }
+        ]
+      },
+      "xray": {
+        "raw": "Assinale a alternativa que apresenta a regência verbal CORRETA:<br><br>A) O servidor preferia mais o teletrabalho do que o presencial.<br>B) O projeto de lei visa aos interesses de toda a sociedade.<br>C) O descuido do motorista implicou em graves prejuízos.",
+        "highlighted": "Assinale a alternativa que apresenta a <span class='highlight-trigger text-slate-900'>regência verbal CORRETA</span>:<br><br>A) <span class='highlight-trap text-slate-900'>preferia mais... do que</span> (Armadilha: 'preferir' não aceita reforço 'mais' nem 'do que'; rege apenas 'a').<br>B) <b>O projeto de lei visa aos interesses...</b> (Gabarito: visar = objetivar exige preposição 'a' → aos interesses).<br>C) <span class='highlight-trap text-slate-900'>implicou em graves...</span> (Armadilha crassa: implicar no sentido de acarretar é VTD, sem a preposição 'em'!).",
+        "steps": [
+          "Analise os verbos do enunciado: preferir, visar, implicar.",
+          "Elimine 'preferir mais... do que' imediatamente.",
+          "Elimine 'implicar em' (implicar não aceita preposição 'em' no sentido de acarretar).",
+          "Confirme a regência de 'visar' como VTI (visa A algo)."
+        ]
+      },
+      "questions": [
+        {
+          "stem": "1. (FCC) O verbo destacado rege preposição 'a' de acordo com a norma culta em:",
+          "options": [
+            "O cidadão visava o bem comum.",
+            "O candidato aspirava a uma vaga no concurso.",
+            "O fiscal assistiu o evento sem prestar atenção.",
+            "A decisão implicou a anulação do certame."
+          ],
+          "correct": 1,
+          "explanation": "Aspirar no sentido de almejar/desejar é VTI e rege a preposição 'a': 'aspirava a uma vaga'. Em A, 'visar' com sentido de almejar deveria ter preposição 'a' ('ao bem comum')."
+        },
+        {
+          "stem": "2. Assinale a frase que desrespeita as normas gramaticais de regência:",
+          "options": [
+            "Prefiro ler livros a assistir a novelas.",
+            "Esqueci-me dos detalhes daquela conversa.",
+            "Esqueci os detalhes daquela conversa.",
+            "Esqueci dos detalhes daquela conversa."
+          ],
+          "correct": 3,
+          "explanation": "Os verbos 'esquecer' e 'lembrar' só admitem a preposição 'de' quando conjugados com pronome oblíquo (pronominais). Sem o pronome ('esqueci-me'), deve ser direto: 'Esqueci os detalhes'."
+        },
+        {
+          "stem": "3. Complete a frase corretamente: 'A conduta do réu implicará ___ anulação do processo e ele terá de responder ___ novas sanções.'",
+          "options": [
+            "na — a",
+            "a — a",
+            "em — por",
+            "na — por"
+          ],
+          "correct": 1,
+          "explanation": "Implicar = acarretar é VTD (implica A anulação, sem 'em'). Responder no sentido de prestar contas de algo rege a preposição 'a' (responder a novas sanções)."
+        }
+      ]
+    },
+    {
+      "id": "pt-colocacao",
+      "subject": "Língua Portuguesa",
+      "label": "Português #06: Colocação Pronominal",
+      "title": "Português #06: Colocação Pronominal — Fatores de Atração e Proibições",
+      "cards": [
+        {
+          "title": "1. As Três Posições dos Pronomes Oblíquos Átonos",
+          "body": "Os pronomes (me, te, se, o, a, lhe, nos, vos, os, as, lhes) podem ficar:<br>• <b>Próclise:</b> antes do verbo ('Não <b>me</b> disseram nada').<br>• <b>Ênclise:</b> depois do verbo ('Disseram-<b>me</b> a verdade').<br>• <b>Mesóclise:</b> no meio do verbo ('Dir-<b>te</b>-ei a verdade')."
+        },
+        {
+          "title": "2. Os 2 Pecados Capitais (Proibições Absolutas)",
+          "body": "• <b>PROIBIDO iniciar frase com pronome oblíquo:</b> 'Me dá um café' ✘ → 'Dê-<b>me</b> um café' ✔ (após pausa ou início de período, usa-se ênclise).<br>• <b>PROIBIDA ênclise após particípio:</b> 'Tinha dito-lhe' ✘ → 'Tinha-lhe dito' ou 'Havia-me esquecido'.<br>• <b>PROIBIDA ênclise com verbo no futuro:</b> 'Direi-te' ✘ → use próclise ('Não te direi') ou mesóclise ('Dir-te-ei')."
+        },
+        {
+          "title": "3. Os 6 Ímãs de Próclise (Palavras Atrativas)",
+          "body": "A próclise é OBRIGATÓRIA quando houver antes do verbo:<br>1. <b>Palavras negativas:</b> <i>não, nunca, jamais, nada, ninguém</i>.<br>2. <b>Pronomes relativos:</b> <i>que, quem, cujo, onde</i>.<br>3. <b>Pronomes indefinidos:</b> <i>alguém, todos, tudo, muitos</i>.<br>4. <b>Conjunções subordinativas:</b> <i>se, caso, embora, quando, porque</i>.<br>5. <b>Advérbios sem vírgula:</b> <i>aqui, ontem, sempre, talvez</i>.<br>6. <b>Em + gerúndio:</b> 'Em <b>se</b> tratando de finanças...'."
+        }
+      ],
+      "unlockQuiz": {
+        "q": "Na oração 'Aqui trabalha-se com afinco', a colocação pronominal está correta segundo o padrão culto?",
+        "options": [
+          {
+            "text": "Sim, a ênclise é a forma padrão da língua culta.",
+            "ok": false
+          },
+          {
+            "text": "Não, pois o advérbio 'Aqui' sem vírgula é palavra atrativa, exigindo próclise ('Aqui se trabalha').",
+            "ok": true
+          },
+          {
+            "text": "Não, pois deveria ser usada mesóclise.",
+            "ok": false
+          }
+        ]
+      },
+      "xray": {
+        "raw": "Assinale a alternativa que desrespeita as normas gramaticais de colocação pronominal:<br><br>A) Não me disseram o motivo do adiamento.<br>B) Me disseram que a sessão foi cancelada.<br>C) Convidar-me-iam se houvesse vagas.",
+        "highlighted": "Assinale a alternativa que <span class='highlight-trigger text-slate-900'>desrespeita as normas</span>:<br><br>A) Não me disseram... (Correto: 'Não' é palavra atrativa e exige próclise).<br>B) <span class='highlight-trap text-slate-900'>Me disseram que...</span> (Gabarito: ERRO GRAVE! NUNCA se inicia período com pronome oblíquo átono na norma culta. O correto é: 'Disseram-me').<br>C) Convidar-me-iam... (Correto: verbo no futuro do pretérito sem palavra atrativa exige mesóclise).",
+        "steps": [
+          "Procure de cara início de período: encontrou pronome abrindo a frase ('Me disseram')? Já é o erro.",
+          "Verifique a presença de palavras atrativas (negações, conjunções, 'que').",
+          "Confirme a presença de futuros sem atrativo para validar a mesóclise."
+        ]
+      },
+      "questions": [
+        {
+          "stem": "1. (FGV) A próclise é obrigatória na oração destacada em:",
+          "options": [
+            "Disseram-lhe toda a verdade logo pela manhã.",
+            "Quem me chamou para a reunião de emergência?",
+            "Entregou-se aos estudos com total dedicação.",
+            "O diretor calou-se diante das acusações."
+          ],
+          "correct": 1,
+          "explanation": "O pronome interrogativo 'Quem' exerce força atrativa sobre o pronome oblíquo 'me', tornando a próclise estritamente obrigatória ('Quem me chamou')."
+        },
+        {
+          "stem": "2. Assinale a opção em que a mesóclise foi empregada de forma CORRETA:",
+          "options": [
+            "Não realizar-se-á a prova no próximo domingo.",
+            "Realizar-se-á a prova no próximo domingo.",
+            "A banca disse que realizar-se-á a prova no domingo.",
+            "Já realizar-se-ia o julgamento se todos chegassem."
+          ],
+          "correct": 1,
+          "explanation": "O verbo 'realizará' está no futuro do presente e inicia o período sem qualquer palavra atrativa, sendo a mesóclise mandatória. Nas demais, 'Não', 'que' e 'Já' atraem o pronome para antes do verbo (próclise)."
+        },
+        {
+          "stem": "3. 'Caso ___ prepare com dedicação, o resultado ___ surpreenderá.' As formas pronominais que preenchem corretamente as lacunas são:",
+          "options": [
+            "se — te",
+            "prepare-se — te",
+            "se — surpreender-te-á",
+            "prepare-se — surpreender-te-á"
+          ],
+          "correct": 0,
+          "explanation": "'Caso' é conjunção subordinativa condicional (palavra atrativa → 'caso se prepare'). Na 2ª oração, o sujeito 'o resultado' admite a próclise do pronome ('o surpreenderá' / 'te surpreenderá')."
+        }
+      ]
+    },
+    {
+      "id": "pt-funcoes-se",
+      "subject": "Língua Portuguesa",
+      "label": "Português #07: As Funções da Palavra SE",
+      "title": "Português #07: Partícula Apassivadora vs. Índice de Indeterminação",
+      "cards": [
+        {
+          "title": "1. O Grande Duelo de Concursos: PA vs. IIS",
+          "body": "• <b>Partícula Apassivadora (PA):</b> Ocorre com <b>VTD (ou VTDI)</b>.<br>A oração <b>TEM SUJEITO PACIENTE</b> e o verbo <b>CONCORDA COM O SUJEITO</b>!<br>✔ 'Vende-<b>se</b> imóvel' (imóvel é vendido).<br>✔ 'Vendem-<b>se</b> imóveis' (imóveis são vendidos).<br><br>• <b>Índice de Indeterminação do Sujeito (IIS):</b> Ocorre com <b>VTI, VI ou VL</b> acompanhado de preposição.<br>O sujeito é indeterminado e o verbo fica <b>OBRIGATORIAMENTE NO SINGULAR</b>!<br>✔ 'Precisa-<b>se</b> de operários' (e NUNCA 'precisam-se de operários')."
+        },
+        {
+          "title": "2. O Teste Infalível da Transformação Passiva",
+          "body": "Para tirar a dúvida em segundos:<br>Tente reescrever a frase na <b>Voz Passiva Analítica</b> (com o verbo ser: <i>é feito, foram construídos</i>).<br>• Se a transformação fizer sentido perfeito ('Construíram-se pontes' → 'Pontes foram construídas'), então o 'SE' é <b>Partícula Apassivadora</b>.<br>• Se a transformação for impossível ('Vive-se bem aqui' → 'Bem é vivido aqui' ✘), o 'SE' é <b>Índice de Indeterminação</b>."
+        },
+        {
+          "title": "3. Conjunção Integrante vs. Condicional",
+          "body": "• <b>Conjunção Integrante:</b> inicia oração subordinada substantiva. Substitua a oração inteira por <b>'ISSO'</b>: 'Não sei <b>se</b> ele vem' → 'Não sei <b>isso</b>'.<br>• <b>Conjunção Condicional:</b> introduz condição e equivale a 'caso': '<b>Se</b> fizer sol, iremos à praia'."
+        }
+      ],
+      "unlockQuiz": {
+        "q": "Na frase 'Alugam-se apartamentos mobiliados na praia', qual é a classificação da palavra 'se'?",
+        "options": [
+          {
+            "text": "Índice de Indeterminação do Sujeito, pois não sabemos quem aluga.",
+            "ok": false
+          },
+          {
+            "text": "Partícula Apassivadora, pois 'apartamentos mobiliados' é o sujeito paciente (são alugados).",
+            "ok": true
+          },
+          {
+            "text": "Pronome reflexivo com valor recíproco.",
+            "ok": false
+          }
+        ]
+      },
+      "xray": {
+        "raw": "Assinale a opção em que a concordância e a função da palavra 'se' estão em estrita conformidade com a norma culta:<br><br>A) Precisam-se de novos digitadores para o tribunal.<br>B) Precisa-se de novos digitadores para o tribunal.<br>C) Não se sabe se o concurso será cancelado.",
+        "highlighted": "Assinale a opção em que a concordância e o uso do 'se' estão <span class='highlight-trigger text-slate-900'>em conformidade com a norma culta</span>:<br><br>A) <span class='highlight-trap text-slate-900'>Precisam-se de novos digitadores</span> (Armadilha gravíssima: 'precisar' rege preposição 'de' = VTI. Com VTI, o 'se' é IIS e o verbo DEVE ficar no singular!).<br>B) <b>Precisa-se de novos digitadores...</b> (Gabarito: Verbo VTI + preposição + SE = Sujeito Indeterminado, verbo cravado no singular).<br>C) Não se sabe se... (Contém uma partícula apassivadora e uma conjunção integrante).",
+        "steps": [
+          "Verifique a transitividade do verbo: quem precisa, precisa 'DE' algo (VTI).",
+          "VTI + SE = Índice de Indeterminação do Sujeito (IIS).",
+          "Regra pétrea do IIS: o verbo NUNCA vai para o plural, mesmo que o complemento esteja no plural."
+        ]
+      },
+      "questions": [
+        {
+          "stem": "1. (CESPE) Em 'Consertam-se computadores e impressoras', a palavra 'se' funciona como:",
+          "options": [
+            "Índice de indeterminação do sujeito",
+            "Partícula apassivadora",
+            "Pronome reflexivo",
+            "Conjunção subordinativa integrante"
+          ],
+          "correct": 1,
+          "explanation": "O verbo 'consertar' é transitivo direto (VTD). O termo 'computadores e impressoras' é o sujeito paciente (computadores e impressoras são consertados), tornando o 'se' partícula apassivadora."
+        },
+        {
+          "stem": "2. Assinale a alternativa que apresenta ERRO de concordância verbal associado à partícula 'se':",
+          "options": [
+            "Compraram-se terrenos no interior.",
+            "Tratam-se de questões bastante delicadas.",
+            "Vive-se com tranquilidade naquela pequena cidade.",
+            "Esperava-se que os resultados fossem melhores."
+          ],
+          "correct": 1,
+          "explanation": "Em 'tratar-se de', o verbo é transitivo indireto (VTI). Com VTI + SE, o sujeito é indeterminado e o verbo deve ficar obrigatoriamente no singular: 'Trata-se de questões'."
+        },
+        {
+          "stem": "3. Na sentença 'O delegado queria saber SE o suspeito confessaria o delito', a palavra 'se' classifica-se como:",
+          "options": [
+            "Conjunção subordinativa condicional",
+            "Partícula apassivadora",
+            "Conjunção subordinativa integrante",
+            "Índice de indeterminação do sujeito"
+          ],
+          "correct": 2,
+          "explanation": "O 'se' introduz oração subordinada substantiva objetiva direta: 'O delegado queria saber ISSO'. Trata-se de conjunção integrante."
+        }
+      ]
+    },
+    {
+      "id": "pt-acentuacao",
+      "subject": "Língua Portuguesa",
+      "label": "Português #08: Acentuação Gráfica e Novo Acordo",
+      "title": "Português #08: Acentuação Gráfica — Regras e Pegadinhas do Novo Acordo",
+      "cards": [
+        {
+          "title": "1. As Três Famílias Básicas da Tonicidade",
+          "body": "• <b>Proparoxítonas (antepenúltima sílaba):</b> TODAS são acentuadas sem exceção! (<i>lâmpada, mérito, trânsito, déficit</i>).<br>• <b>Oxítonas (última sílaba):</b> acentuam-se as terminadas em <b>A, E, O</b> (seguidas ou não de S), <b>EM, ENS</b> (<i>pará, café, cipó, alguém, parabéns</i>).<br>• <b>Paroxítonas (penúltima sílaba):</b> acentuam-se as terminadas em <b>L, R, N, X, PS, I(S), US, UM/UNS, Ã(S), ÃO(S)</b> e <b>DITONGO</b> (<i>fácil, caráter, hífen, tórax, júri, vírus, álbum, órfão, água, série</i>)."
+        },
+        {
+          "title": "2. A Regra do Hiato Tônico (I e U)",
+          "body": "Acentuam-se as letras <b>I</b> e <b>U</b> tônicas quando formam hiato (ficam sozinhas na sílaba ou com 'S'):<br>✔ <i>sa-ú-de, sa-í-da, ba-ú, e-go-ís-ta, fa-ís-ca</i>.<br><br><b>NÃO levam acento se:</b><br>• Forem seguidas de <b>NH</b> na sílaba seguinte: <i>ra-i-nha, ta-i-nha</i>.<br>• Forem acompanhadas de outra letra na mesma sílaba (que não seja S): <i>ju-iz, ca-ir, ru-im</i>."
+        },
+        {
+          "title": "3. O Que o Novo Acordo Cortou (As Maiores Pegadinhas)",
+          "body": "• <b>Ditongos abertos ÉI e ÓI em PAROXÍTONAS perderam o acento:</b> <i>ideia, plateia, jiboia, heroico, paranoico</i> (mas ATENÇÃO: em oxítonas o acento continua: <i>herói, troféu, papéis, anéis</i>!).<br>• <b>Vogais dobradas perderam o acento:</b> <i>voo, enjoo, leem, veem, creem</i>.<br>• <b>Acentos diferenciais foram quase todos abolidos:</b> restaram apenas <b>pôde</b> (passado) vs. <b>pode</b> (presente) e <b>pôr</b> (verbo) vs. <b>por</b> (preposição)."
+        }
+      ],
+      "unlockQuiz": {
+        "q": "De acordo com o Acordo Ortográfico vigente, por que a palavra 'ideia' não recebe acento gráfico?",
+        "options": [
+          {
+            "text": "Porque se tornou uma palavra proparoxítona.",
+            "ok": false
+          },
+          {
+            "text": "Porque os ditongos abertos (éi, ói) em palavras paroxítonas perderam o acento.",
+            "ok": true
+          },
+          {
+            "text": "Porque palavras terminadas em vogal nunca são acentuadas.",
+            "ok": false
+          }
+        ]
+      },
+      "xray": {
+        "raw": "Assinale a alternativa em que TODAS as palavras estão acentuadas corretamente segundo a norma ortográfica vigente:<br><br>A) herói, platéia, juíz<br>B) troféu, heroico, saída<br>C) jibóia, saúde, vôo",
+        "highlighted": "Assinale a alternativa em que <span class='highlight-trigger text-slate-900'>TODAS as palavras estão acentuadas corretamente</span>:<br><br>A) <span class='highlight-trap text-slate-900'>platéia, juíz</span> (Erros: plateia perdeu o acento no novo acordo; juiz não tem acento pois o 'i' forma sílaba com 'z').<br>B) <b>troféu, heroico, saída</b> (Gabarito: troféu = oxítona mantém acento; heroico = paroxítona sem acento; saída = hiato com i tônico sozinho na sílaba).<br>C) <span class='highlight-trap text-slate-900'>jibóia, vôo</span> (Erros: jiboia perdeu acento por ser paroxítona; voo perdeu acento de vogal dupla).",
+        "steps": [
+          "Elimine as palavras com ditongo aberto em paroxítona acentuadas (platéia, jibóia).",
+          "Elimine as palavras com vogais duplas acentuadas (vôo, lêem).",
+          "Confira a regra do hiato e das oxítonas na alternativa restante."
+        ]
+      },
+      "questions": [
+        {
+          "stem": "1. (FCC) As palavras 'relatório', 'espécie' e 'audiência' são acentuadas graficamente pela mesma regra que justifica o acento em:",
+          "options": [
+            "bálsamo",
+            "memória",
+            "café",
+            "saúde"
+          ],
+          "correct": 1,
+          "explanation": "Todas as palavras citadas ('relatório', 'espécie', 'audiência' e 'memória') são paroxítonas terminadas em ditongo oral crescente (também aceitas pela tradição como proparoxítonas eventuais/relativas)."
+        },
+        {
+          "stem": "2. Assinale a alternativa que contém uma palavra incorretamente grafada quanto à acentuação:",
+          "options": [
+            "Ele não pôde comparecer ontem, mas hoje ele pode vir.",
+            "O paciente ainda sente muito enjôo durante o trajeto.",
+            "O juiz apitou o fim do jogo sob aplausos.",
+            "Os pássaros voam em busca de clima quente."
+          ],
+          "correct": 1,
+          "explanation": "O Novo Acordo extinguiu o acento circunflexo nos encontros vocálicos 'oo' das paroxítonas (enjoo, voo, perdoo)."
+        },
+        {
+          "stem": "3. Quanto à regra de acentuação dos hiatos, assinale a opção inteiramente CORRETA:",
+          "options": [
+            "ba-ú, sa-í-da, ca-í-ste",
+            "ra-í-nha, ba-ú, ju-íz",
+            "ru-ím, sa-ú-de, fa-ís-ca",
+            "pa-ís, gra-ú-na, ta-í-nha"
+          ],
+          "correct": 0,
+          "explanation": "Em 'baú', 'saída' e 'caíste', as vogais 'i' e 'u' são tônicas, formam hiato e estão sozinhas na sílaba ou seguidas de 's'. Nas outras opções, 'rainha' e 'tainha' antecedem NH, e 'juiz' e 'ruim' não ficam sozinhos na sílaba."
+        }
+      ]
+    }
+  ]
+}

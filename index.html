@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutor 4 Fases — Protótipo Funcional</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen font-sans pb-16">
+
+  <!-- Top Bar / Header -->
+  <header class="bg-slate-800 border-b border-slate-700 sticky top-0 z-20">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-lg bg-indigo-600 flex items-center justify-center font-bold text-lg shadow">4F</div>
+        <div>
+          <h1 class="font-bold text-sm md:text-base leading-tight">Motor de Estudos — Ciclo de 4 Fases</h1>
+          <p class="text-xs text-slate-400">Modo Pós-Expediente (Foco Cirúrgico)</p>
+        </div>
+      </div>
+
+      <!-- Seletor de Tópico -->
+      <div class="flex items-center gap-2">
+        <label class="text-xs text-slate-400">Tópico:</label>
+        <select id="topicSelect" onchange="changeTopic(this.value)" class="bg-slate-900 border border-slate-600 text-xs md:text-sm rounded-lg px-3 py-1.5 text-slate-200 focus:outline-none focus:border-indigo-500 max-w-[16rem] md:max-w-xs">
+          <!-- Populado via data/topics.json -->
+        </select>
+      </div>
+
+      <!-- Cronômetro da Fase -->
+      <div class="flex items-center gap-2 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-700">
+        <span id="timerDot" class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="text-xs text-slate-400">Timer:</span>
+        <span id="timerDisplay" class="font-mono font-bold text-sm text-emerald-400">20:00</span>
+      </div>
+    </div>
+
+    <!-- Stepper das 4 Fases -->
+    <div class="max-w-4xl mx-auto px-4 py-2 border-t border-slate-700/60 bg-slate-800/60">
+      <div class="grid grid-cols-4 gap-2 text-center text-xs font-semibold">
+        <button id="step-1" onclick="tryNavigate(1)" class="py-2 rounded-md bg-indigo-600 text-white transition">1. ENTENDER</button>
+        <button id="step-2" onclick="tryNavigate(2)" class="py-2 rounded-md bg-slate-700 text-slate-400 cursor-not-allowed transition">🔒 2. ENXERGAR</button>
+        <button id="step-3" onclick="tryNavigate(3)" class="py-2 rounded-md bg-slate-700 text-slate-400 cursor-not-allowed transition">🔒 3. FAZER</button>
+        <button id="step-4" onclick="tryNavigate(4)" class="py-2 rounded-md bg-slate-700 text-slate-400 cursor-not-allowed transition">🔒 4. DIAGNOSTICAR</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Container Principal -->
+  <main class="max-w-4xl mx-auto px-4 mt-6">
+
+    <!-- ==================== FASE 1: ENTENDER ==================== -->
+    <section id="phase-1" class="fade-in space-y-6">
+      <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 shadow-lg">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-xs font-bold uppercase tracking-wider text-indigo-400 bg-indigo-950/80 px-3 py-1 rounded-full border border-indigo-800">Fase 1 • Conceito Puro (Sem Decoreba)</span>
+          <span id="cardCounter" class="text-xs text-slate-400">Card 1 de 3</span>
+        </div>
+
+        <!-- Conteúdo do Micro-Card -->
+        <div id="cardContent" class="min-h-[160px] flex flex-col justify-center bg-slate-900/70 border border-slate-700/80 rounded-lg p-6 mb-4">
+          <!-- Injetado via JS -->
+        </div>
+
+        <div class="flex justify-between items-center">
+          <button onclick="prevCard()" id="btnPrevCard" class="px-4 py-2 text-xs font-semibold rounded-lg bg-slate-700 hover:bg-slate-600 disabled:opacity-40">← Anterior</button>
+          <button onclick="nextCard()" id="btnNextCard" class="px-4 py-2 text-xs font-semibold rounded-lg bg-indigo-600 hover:bg-indigo-500">Próximo Card →</button>
+        </div>
+      </div>
+
+      <!-- Mini-Checkpoint de Desbloqueio -->
+      <div id="unlockQuizBox" class="hidden bg-slate-800 border-2 border-indigo-500/60 rounded-xl p-6 shadow-lg fade-in">
+        <h3 class="text-sm font-bold text-indigo-300 mb-2">⚡ Validação Rápida para destravar a Fase 2 (Enxergar)</h3>
+        <p id="unlockQuestion" class="text-sm text-slate-200 mb-4"></p>
+        <div id="unlockOptions" class="space-y-2"></div>
+        <p id="unlockFeedback" class="text-xs mt-3 font-semibold hidden"></p>
+      </div>
+    </section>
+
+    <!-- ==================== FASE 2: ENXERGAR ==================== -->
+    <section id="phase-2" class="hidden fade-in space-y-6">
+      <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 shadow-lg">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-950/80 px-3 py-1 rounded-full border border-amber-800">Fase 2 • Padrão Visual & Raio-X</span>
+            <h2 class="text-lg font-bold mt-2">Como a banca esconde a regra no enunciado</h2>
+          </div>
+
+          <!-- Botão Toggle Lente do Examinador -->
+          <button id="btnToggleXray" onclick="toggleXray()" class="flex items-center gap-2 px-4 py-2 rounded-lg font-bold text-xs bg-amber-500 text-slate-950 hover:bg-amber-400 transition shadow">
+            <span>🔍 Ativar Lente do Examinador</span>
+          </button>
+        </div>
+
+        <p class="text-xs text-slate-400 mb-4">Ative a lente acima para destacar em <span class="text-yellow-300 font-semibold">amarelo o gatilho da questão</span> e em <span class="text-red-400 font-semibold">vermelho a armadilha clássica</span>.</p>
+
+        <!-- Questão Dissecada -->
+        <div id="xrayContainer" class="bg-slate-900 border border-slate-700 rounded-lg p-5 space-y-4 text-sm leading-relaxed">
+          <!-- Injetado via JS -->
+        </div>
+
+        <!-- Mapa Mental / Fluxograma de Decisão -->
+        <div id="xrayFlowchart" class="hidden mt-5 bg-indigo-950/40 border border-indigo-800/80 rounded-lg p-4 fade-in">
+          <h4 class="text-xs font-bold uppercase text-indigo-300 mb-2">🧭 Algoritmo Mental (O que fazer na prova em 15 segundos):</h4>
+          <ol id="xraySteps" class="list-decimal list-inside text-xs text-slate-200 space-y-1.5"></ol>
+        </div>
+
+        <div class="mt-6 flex justify-end">
+          <button onclick="unlockPhase(3)" class="px-5 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow transition">
+            Enxerguei o padrão → Ir para Fase 3 (Fazer)
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FASE 3: FAZER ==================== -->
+    <section id="phase-3" class="hidden fade-in space-y-6">
+      <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 shadow-lg">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-800">Fase 3 • Arena de Prática Ativa</span>
+          <span id="qProgress" class="text-xs text-slate-400 font-mono">Questão 1 de 3</span>
+        </div>
+
+        <div id="phase3Done" class="hidden text-center space-y-3 py-6">
+          <p class="text-sm text-slate-200">✔ Você já concluiu as questões desta sessão. Veja o resultado na Fase 4.</p>
+          <button onclick="redoPhase3()" class="px-5 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 font-bold text-xs text-white">Refazer questões (nova sessão)</button>
+        </div>
+
+        <div id="quizArena" class="space-y-4">
+          <p id="qStem" class="text-sm md:text-base font-medium bg-slate-900 p-4 rounded-lg border border-slate-700"></p>
+          <div id="qOptions" class="space-y-2"></div>
+
+          <!-- Marcadores Metacognitivos (Chute / Dúvida) -->
+          <div class="pt-3 border-t border-slate-700 flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <label class="flex items-center gap-2 text-xs text-amber-300 cursor-pointer bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-700">
+                <input type="checkbox" id="chkDoubt" class="accent-amber-400">
+                🤔 Fiquei em dúvida entre 2 alternativas
+              </label>
+              <label class="flex items-center gap-2 text-xs text-rose-300 cursor-pointer bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-700">
+                <input type="checkbox" id="chkGuess" class="accent-rose-400">
+                🎲 Chutei
+              </label>
+            </div>
+
+            <button onclick="submitAnswer()" class="px-5 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 font-bold text-xs text-white">
+              Confirmar Resposta →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FASE 4: DIAGNOSTICAR ==================== -->
+    <section id="phase-4" class="hidden fade-in space-y-6">
+      <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 shadow-lg">
+        <span class="text-xs font-bold uppercase tracking-wider text-rose-400 bg-rose-950/80 px-3 py-1 rounded-full border border-rose-800">Fase 4 • Autópsia de Erros & Roteamento</span>
+        <h2 class="text-lg font-bold mt-2">Diagnóstico Cirúrgico da Sessão</h2>
+        <p class="text-xs text-slate-400 mb-6">Classifique a causa-raiz das questões que você errou ou acertou com dúvida/chute para o sistema montar sua próxima sessão.</p>
+
+        <!-- Lista de Questões para Triagem -->
+        <div id="autopsyList" class="space-y-4 mb-6"></div>
+
+        <!-- Painel de Veredito do Algoritmo -->
+        <div id="verdictPanel" class="bg-slate-900 border-2 border-indigo-500/70 rounded-xl p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <h3 class="text-sm font-bold text-indigo-300 uppercase tracking-wider">🤖 Veredito do Motor para o Próximo Estudo</h3>
+            <span id="scoreBadge" class="text-xs font-bold px-2.5 py-1 rounded"></span>
+          </div>
+          <p id="verdictText" class="text-sm text-slate-200 leading-relaxed"></p>
+          <div id="verdictAction" class="text-xs bg-slate-800 p-3 rounded-lg border border-slate-700 text-slate-300"></div>
+          <p id="verdictHistory" class="text-xs text-slate-500"></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <script src="js/app.js"></script>
+</body>
+</html>

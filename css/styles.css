@@ -1,0 +1,5 @@
+.highlight-trigger { background-color: #fef08a; padding: 2px 6px; border-radius: 4px; font-weight: 600; border-bottom: 2px solid #eab308; transition: all 0.3s; }
+.highlight-trap { background-color: #fecaca; padding: 2px 6px; border-radius: 4px; font-weight: 600; border-bottom: 2px solid #ef4444; transition: all 0.3s; }
+.fade-in { animation: fadeIn 0.25s ease-in-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
